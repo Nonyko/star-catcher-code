@@ -1,0 +1,248 @@
+fileFormatVersion: 2
+guid: a5e80edc31255e64b92f2cda964d3b25
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 5527975219836784645
+    second: shooter_plant_spritesheet_0
+  - first:
+      213: -3416925104651656159
+    second: shooter_plant_spritesheet_1
+  - first:
+      213: -7309617352811670067
+    second: shooter_plant_spritesheet_2
+  - first:
+      213: 7043067555815321701
+    second: shooter_plant_spritesheet_3
+  - first:
+      213: 8821844933576126948
+    second: shooter_plant_spritesheet_4
+  - first:
+      213: -740498006172795205
+    second: shooter_plant_spritesheet_5
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: shooter_plant_spritesheet_0
+      rect:
+        serializedVersion: 2
+        x: 93
+        y: 405
+        width: 187
+        height: 176
+      alignment: 9
+      pivot: {x: 0.7500601, y: 0.5404308}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50098898c2057bc40800000000000000
+      internalID: 5527975219836784645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shooter_plant_spritesheet_1
+      rect:
+        serializedVersion: 2
+        x: 409
+        y: 410
+        width: 235
+        height: 184
+      alignment: 9
+      pivot: {x: 0.76387006, y: 0.5386729}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 124af1198b4a490d0800000000000000
+      internalID: -3416925104651656159
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shooter_plant_spritesheet_2
+      rect:
+        serializedVersion: 2
+        x: 97
+        y: 150
+        width: 222
+        height: 164
+      alignment: 9
+      pivot: {x: 0.75184757, y: 0.5867785}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dc511a1eeb50f8a90800000000000000
+      internalID: -7309617352811670067
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shooter_plant_spritesheet_3
+      rect:
+        serializedVersion: 2
+        x: 403
+        y: 145
+        width: 225
+        height: 182
+      alignment: 9
+      pivot: {x: 0.7620435, y: 0.60053766}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 560737150a00eb160800000000000000
+      internalID: 7043067555815321701
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shooter_plant_spritesheet_4
+      rect:
+        serializedVersion: 2
+        x: 906
+        y: 202
+        width: 196
+        height: 305
+      alignment: 9
+      pivot: {x: 0.50443906, y: 0.080048755}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4e172691a3d7d6a70800000000000000
+      internalID: 8821844933576126948
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: shooter_plant_spritesheet_5
+      rect:
+        serializedVersion: 2
+        x: 866
+        y: 23
+        width: 257
+        height: 146
+      alignment: 9
+      pivot: {x: 0.48813352, y: 0.7150392}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bbe7f299cf839b5f0800000000000000
+      internalID: -740498006172795205
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

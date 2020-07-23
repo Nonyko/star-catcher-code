@@ -1,0 +1,603 @@
+fileFormatVersion: 2
+guid: 4eeeac8feb425c845b20ebc32ec97a74
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: 7367045616784993429
+    second: tilesets_chao_0
+  - first:
+      213: -5391736982212054957
+    second: tilesets_chao_1
+  - first:
+      213: 8890908744947045677
+    second: tilesets_chao_2
+  - first:
+      213: -6076675673937925081
+    second: tilesets_chao_3
+  - first:
+      213: -6931113471445427337
+    second: tilesets_chao_4
+  - first:
+      213: 5833493763969645586
+    second: tilesets_chao_5
+  - first:
+      213: 506378273191380918
+    second: tilesets_chao_6
+  - first:
+      213: -9034608717409051900
+    second: tilesets_chao_7
+  - first:
+      213: -5437030385002105405
+    second: tilesets_chao_8
+  - first:
+      213: -7761215876101937557
+    second: tilesets_chao_9
+  - first:
+      213: 9009197728100959360
+    second: tilesets_chao_10
+  - first:
+      213: 7168493087986808336
+    second: tilesets_chao_11
+  - first:
+      213: -2819319775291426138
+    second: tilesets_chao_12
+  - first:
+      213: 3496794522626293168
+    second: tilesets_chao_13
+  - first:
+      213: -936615225487678183
+    second: tilesets_chao_14
+  - first:
+      213: 2862241116581485744
+    second: tilesets_chao_15
+  - first:
+      213: -3217019006743734407
+    second: tilesets_chao_16
+  - first:
+      213: 3118428183841697645
+    second: tilesets_chao_17
+  externalObjects: {}
+  serializedVersion: 11
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 200
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 0
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  applyGammaDecoding: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: tilesets_chao_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 68}
+      outline: []
+      physicsShape:
+      - - {x: -179, y: -200}
+        - {x: -179, y: 128}
+        - {x: 200, y: 129}
+        - {x: 200, y: -200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 59c6198c4f00d3660800000000000000
+      internalID: 7367045616784993429
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_1
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 68}
+      outline: []
+      physicsShape:
+      - - {x: -200, y: 129}
+        - {x: -199.99998, y: -199.60934}
+        - {x: 200, y: -199.60934}
+        - {x: 200, y: 129}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 350f9e408c3bc25b0800000000000000
+      internalID: -5391736982212054957
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_2
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 68}
+      outline: []
+      physicsShape:
+      - - {x: 186, y: -200}
+        - {x: 187, y: 131}
+        - {x: -200, y: 129}
+        - {x: -199.60934, y: -199.60934}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d259bf0c56ad26b70800000000000000
+      internalID: 8890908744947045677
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_3
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -200, y: 200}
+        - {x: -200, y: -199.60934}
+        - {x: 200, y: -199.60934}
+        - {x: 200, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 72c2caf8baf4baba0800000000000000
+      internalID: -6076675673937925081
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_4
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -199.99995, y: 200}
+        - {x: -199.99995, y: -199.60934}
+        - {x: 200, y: -199.60934}
+        - {x: 200, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 77b1294350dbfcf90800000000000000
+      internalID: -6931113471445427337
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_5
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 800
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21cfdd0dbabb4f050800000000000000
+      internalID: 5833493763969645586
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -181.64062, y: 200}
+        - {x: -181.64062, y: -199.99998}
+        - {x: 200, y: -199.99998}
+        - {x: 200, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6b74c874b54070700800000000000000
+      internalID: 506378273191380918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_7
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -199.99998, y: 200}
+        - {x: -199.99998, y: -199.99998}
+        - {x: 200, y: -199.99998}
+        - {x: 200, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 40b9f2a2d3f9e9280800000000000000
+      internalID: -9034608717409051900
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_8
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: 188.28127, y: -199.99998}
+        - {x: 188.28127, y: 200}
+        - {x: -199.60934, y: 200}
+        - {x: -199.60934, y: -199.99998}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3c5b1f4eba9cb84b0800000000000000
+      internalID: -5437030385002105405
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_9
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -200, y: 132}
+        - {x: -200, y: -199.99998}
+        - {x: 200, y: -199.99998}
+        - {x: 200, y: 134}
+      tessellationDetail: 0
+      bones: []
+      spriteID: b6662d7084f9a4490800000000000000
+      internalID: -7761215876101937557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_10
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 084c6b6d999170d70800000000000000
+      internalID: 9009197728100959360
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_11
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 400
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 016fb44bb7a9b7360800000000000000
+      internalID: 7168493087986808336
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_12
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -181.64062, y: 200}
+        - {x: -181.64062, y: -196.875}
+        - {x: -174.60938, y: -198.04688}
+        - {x: 96.09375, y: -198.04688}
+        - {x: 200, y: -196.875}
+        - {x: 200, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6aa358d0a93cfd8d0800000000000000
+      internalID: -2819319775291426138
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_13
+      rect:
+        serializedVersion: 2
+        x: 400
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -199.99998, y: 200}
+        - {x: -199.99998, y: -196.875}
+        - {x: 200, y: -196.875}
+        - {x: 200, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bdfbad671c178030800000000000000
+      internalID: 3496794522626293168
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_14
+      rect:
+        serializedVersion: 2
+        x: 800
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -199.60934, y: 200}
+        - {x: -199.60934, y: -196.875}
+        - {x: -91.79685, y: -199.21875}
+        - {x: 177.73439, y: -199.21875}
+        - {x: 188.28127, y: -195.70312}
+        - {x: 188.28127, y: 200}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 915a5913a697003f0800000000000000
+      internalID: -936615225487678183
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_15
+      rect:
+        serializedVersion: 2
+        x: 1200
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -180, y: 129}
+        - {x: -182, y: -192}
+        - {x: 69, y: -193}
+        - {x: 200, y: -193}
+        - {x: 200, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bc5b577129b8b720800000000000000
+      internalID: 2862241116581485744
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_16
+      rect:
+        serializedVersion: 2
+        x: 1600
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -200, y: 128}
+        - {x: -199.99995, y: -196.875}
+        - {x: 200, y: -196.875}
+        - {x: 200, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: 9771c53024ada53d0800000000000000
+      internalID: -3217019006743734407
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: tilesets_chao_17
+      rect:
+        serializedVersion: 2
+        x: 2000
+        y: 0
+        width: 400
+        height: 400
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape:
+      - - {x: -200, y: 128}
+        - {x: -199.60927, y: -196.875}
+        - {x: -90.6249, y: -199.21875}
+        - {x: 184.76572, y: -199.21875}
+        - {x: 187.10947, y: -194.53125}
+        - {x: 185, y: 128}
+      tessellationDetail: 0
+      bones: []
+      spriteID: d6f637b39e1e64b20800000000000000
+      internalID: 3118428183841697645
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!78 &1
+TagManager:
+  serializedVersion: 2
+  tags:
+  - Star
+  - Enemy
+  - InvisibleWall
+  - Bullet
+  - Floor
+  - FallingBlock
+  layers:
+  - Default
+  - TransparentFX
+  - Ignore Raycast
+  - 
+  - Water
+  - UI
+  - 
+  - 
+  - mid
+  - floor
+  - player
+  - enemy
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  - 
+  m_SortingLayers:
+  - name: Default
+    uniqueID: 0
+    locked: 0
+  - name: background
+    uniqueID: 1816454977
+    locked: 0
+  - name: chao
+    uniqueID: 894156621
+    locked: 0
+  - name: mid
+    uniqueID: 3722427579
+    locked: 0
+  - name: player
+    uniqueID: 3295632425
+    locked: 0
+  - name: veneno
+    uniqueID: 345312029
+    locked: 0
