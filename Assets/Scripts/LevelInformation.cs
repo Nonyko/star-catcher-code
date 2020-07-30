@@ -18,7 +18,7 @@ public class LevelInformation : MonoBehaviour
     }
 
     void OnDestroy(){
-        Debug.Log("Saving the stuff");
+      //  Debug.Log("Saving the stuff");
         PlayerPrefs.SetInt("numberStarsColected", numberStarsColected);
         PlayerPrefs.SetFloat("timeLevel", timeLevel);
         PlayerPrefs.SetInt("lastPhase", lastPhase);

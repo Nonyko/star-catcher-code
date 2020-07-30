@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7180774197509152339}
   - component: {fileID: 4705329588883822169}
   - component: {fileID: 1302601127001563269}
+  - component: {fileID: -4591627356168528171}
   m_Layer: 0
   m_Name: plantShooterBullet
   m_TagString: Enemy
@@ -145,3 +146,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   rb: {fileID: 7180774197509152339}
+--- !u!95 &-4591627356168528171
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2676342141463770392}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 83b1ff1bb1c32824aa3152fb465c186c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0

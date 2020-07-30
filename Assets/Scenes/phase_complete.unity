@@ -651,7 +651,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0cd44c1031e13a943bb63640046fad76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_UiScaleMode: 0
+  m_UiScaleMode: 1
   m_ReferencePixelsPerUnit: 100
   m_ScaleFactor: 1
   m_ReferenceResolution: {x: 800, y: 600}
@@ -1076,7 +1076,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4923a57b583e3ae47ab38fdca7c8e942, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
 --- !u!4 &1063740016
 Transform:
   m_ObjectHideFlags: 0
@@ -1336,6 +1335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   numberStarsColected: 0
   timeLevel: 0
+  lastPhase: 0
 --- !u!4 &1558634655
 Transform:
   m_ObjectHideFlags: 0

@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using UnityEngine.Events;
+using System.Collections;
 
 public class CharacterController2D : MonoBehaviour
 {
@@ -28,7 +29,7 @@ public class CharacterController2D : MonoBehaviour
 
 	float groundedRememberTime = 0.2f;
     float groundedTimeBeforeReset  = 0;
-
+	bool canDoubleJump = false;
 	[Header("Events")]
 	[Space]
 
@@ -41,6 +42,10 @@ public class CharacterController2D : MonoBehaviour
 
 	
 	private bool m_wasCrouching = false;
+
+	bool wasDashing = false;
+
+	public GameObject[] trailsDash;
 
 	private void Awake()
 	{
@@ -67,8 +72,9 @@ public class CharacterController2D : MonoBehaviour
 			{
 				m_Grounded = true;
 				if (!wasGrounded){
-				LandingSound.Play();				
+				LandingSound.Play();					
 				OnLandEvent.Invoke();
+				canDoubleJump = false;
 				}
 					
 			}
@@ -83,10 +89,36 @@ public class CharacterController2D : MonoBehaviour
 		}else{
 			ToggleShadow(true);
 		}
+
+		if(wasDashing){
+			foreach (var trail in trailsDash)
+			{
+				trail.SetActive(true);
+			}
+			Debug.Log("was dashing");
+			wasDashing=false;
+			StartCoroutine(StopDash());
+		}
 	}
 
+	IEnumerator  StopDash(){ 
+        yield return new WaitForSeconds(0.14f);  
+      
+		foreach (var trail in trailsDash)
+			{
+				trail.SetActive(false);
+			}
+			  //m_Rigidbody2D.velocity = new Vector2(0.0f, 0.0f);	
+      }
 
-	public void Move(float move, bool crouch, bool jump)
+    // IEnumerator StopDash() 
+	// {   
+		
+	// 		yield return new WaitForSeconds(0.3f);
+	// 		m_Rigidbody2D.velocity = new Vector2(0.0f, m_Rigidbody2D.velocity.y);			
+	// }
+
+	public void Move(float move, bool crouch, bool jump,bool doubleJump, bool dash)
 	{
 		// If crouching, check to see if the character can stand up
 		if (!crouch)
@@ -149,15 +181,33 @@ public class CharacterController2D : MonoBehaviour
 			}
 		}
 		// If the player should jump...
-		if (groundedTimeBeforeReset > 0 && jump)
+		
+		if ( (groundedTimeBeforeReset > 0  && jump))
 		{
+			
 			// Add a vertical force to the player.
 			m_Grounded = false;
 			groundedTimeBeforeReset = 0;
 			m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
 			JumpSound.Play();
+			canDoubleJump = true;
 		}
 
+		
+	
+			if(doubleJump){
+				
+				m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0.0f);
+				m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+				JumpSound.Play();
+			}
+		if (m_Grounded && dash){
+			wasDashing = true;
+			  Debug.Log("executar dash");
+			  // Move the character by finding the target velocity
+			Vector3 targetVelocity = new Vector2(move * 20f, m_Rigidbody2D.velocity.y);
+			m_Rigidbody2D.velocity = targetVelocity;			
+		}
 		if(m_Grounded && !jump && move!=0){
 			CreateDust();
 		}

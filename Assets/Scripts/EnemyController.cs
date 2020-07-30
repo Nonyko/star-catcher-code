@@ -31,6 +31,8 @@ public class EnemyController : MonoBehaviour
     public string movementBehaviorString = "random";
     public Animator animator;
 
+    public int EnemyLife = 1;
+
     [System.Serializable]
 	public class FloatEvent : UnityEvent<float> { }
     [Header("Events")]
@@ -91,6 +93,15 @@ public class EnemyController : MonoBehaviour
 
           Move(horizontalMove  * Time.fixedDeltaTime, jump );   
          jump = false;
+
+         //Invunerable countdown
+         if(Invunerable){
+             TimeBeforeLoseInvunerable -=1  * Time.fixedDeltaTime;
+             if(TimeBeforeLoseInvunerable<=0){
+                 Invunerable = false;
+             }
+         }
+
      }
    
 
@@ -159,6 +170,9 @@ public class EnemyController : MonoBehaviour
                 case "random":
                 horizontalMove = randomMovimento();
                 break;
+                case "none":
+                horizontalMove =  0;
+                break;
             }
             horizontalMove = horizontalMove * runSpeed;
         }
@@ -178,7 +192,11 @@ public class EnemyController : MonoBehaviour
         }
 
     }
-    
+    float TimeBeforeLoseInvunerableRemember = 0.4f;
+    float TimeBeforeLoseInvunerable = 0;
+    bool Invunerable = false;
+
+
     void  OnTriggerEnter2D(Collider2D col){
         
         if(col.CompareTag("InvisibleWall")){
@@ -189,12 +207,25 @@ public class EnemyController : MonoBehaviour
                 finishedToCommandMoveFlag = false;
             }
         }
-
-        if(col.CompareTag("Bullet")){           
+        
+        if(col.CompareTag("Bullet")){       
+          
            animator.SetBool("IsTakingDamage",true);
            OnHitedEvent.Invoke(6.0f);
-           gameObject.GetComponent<BoxCollider2D>().enabled = false;
-           Destroy(gameObject, 0.3f);
+
+           if(!Invunerable){
+                EnemyLife = EnemyLife - 1;
+                TimeBeforeLoseInvunerable = TimeBeforeLoseInvunerableRemember;
+                Invunerable = true;
+           }
+          
+             
+           if(EnemyLife<=0){
+             
+               gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                Destroy(gameObject, 0.3f);
+           }
+           StartCoroutine(ReturnToDefaultAnimationAfterHited());
         }
 
     }
@@ -216,6 +247,9 @@ public class EnemyController : MonoBehaviour
          moveToggle = false;
     }
 
-    
+    IEnumerator  ReturnToDefaultAnimationAfterHited(){
+        yield return new WaitForSeconds(0.35f);
+         animator.SetBool("IsTakingDamage",false);
+    }
 
 }

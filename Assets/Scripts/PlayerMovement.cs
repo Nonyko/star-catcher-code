@@ -22,6 +22,12 @@ public class PlayerMovement : MonoBehaviour
 
     bool isDead = false;
 
+    bool doubleJump = false;
+    bool hadDoubleJumped = false;
+    bool onAir = false;
+
+    
+    
     [System.Serializable]
 	public class FloatEvent : UnityEvent<float> { }
   
@@ -32,18 +38,61 @@ public class PlayerMovement : MonoBehaviour
         if (OnShootEvent == null)
 			OnShootEvent = new FloatEvent();
     }
+    float DashCountDown =0f;
+    float DashCountDownRemember = 0.2f;
+    bool IsDashing = false;
+    float oldDirection = 0;
+    bool dash = false;
     void Update()
     {
         if(!isDead){
             horizontalMove =Input.GetAxisRaw("Horizontal") * runSpeed;
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-        
+
+            //dash: se button horizontal true: iniciar countdown, se antes de chegar a zero for true novamente,
+            //e os dois comandos rapidos forem na mesma direcao executar dash 
+            
+            if(Input.GetButtonDown("Horizontal")){
+              
+                //quando eu aperto horizontal,
+                // se eu ja nao estiver dando dash,
+                // inicio um contador de tempo para o comando de dash.
+                 if(DashCountDown>0){
+                  DashCountDown = 0;
+                  IsDashing =  true;
+                
+                  if(oldDirection == Input.GetAxisRaw("Horizontal")){
+                        // Debug.Log("executar dash");
+                        dash = true;
+                  }
+                }
+
+                if(!IsDashing){
+                   DashCountDown = DashCountDownRemember;
+                   oldDirection = Input.GetAxisRaw("Horizontal");
+                }
+               
+               
+            }
+
+            
+
         if (Input.GetButtonDown("Jump")){
             jumpPressedTimeBeforeReset = jumpPressedRememberTime;
+            
+           if(onAir && !doubleJump ){
+               if(!hadDoubleJumped){
+                doubleJump = true;
+               	// Debug.Log("Executar double jump");
+                   hadDoubleJumped = true;
+                    animator.SetBool("IsDoubleJumping", true);
+                }
+           }
         }
 
         if (jumpPressedTimeBeforeReset > 0){
             jump = true;
+            onAir = true;
             animator.SetBool("IsJumping", true);
         }
         
@@ -56,9 +105,13 @@ public class PlayerMovement : MonoBehaviour
         
 
     }
-
+    
     public void OnLanding(){
-         animator.SetBool("IsJumping", false);        
+        onAir = false;
+        hadDoubleJumped = false;
+        animator.SetBool("IsJumping", false); 
+        animator.SetBool("IsDoubleJumping", false);
+          
     }
 
     public void OnCrouching(bool isCrouching){
@@ -88,15 +141,22 @@ public class PlayerMovement : MonoBehaviour
       }
 
     void FixedUpdate(){
-        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch , jump);      
+        controller.Move(horizontalMove * Time.fixedDeltaTime, crouch , jump, doubleJump, dash);  
+        IsDashing =  false;    
         jump = false;
+        dash = false;
+        doubleJump = false;
         timeBeforeResetShoot +=1  * Time.fixedDeltaTime;
         jumpPressedTimeBeforeReset -= 1  * Time.fixedDeltaTime;
          if(timeBeforeResetShoot>0.05){
             timeBeforeResetShoot=0;
            animator.SetBool("IsShooting", false);
-        }       
-        
+        }    
+
+        if(DashCountDown>0){
+            DashCountDown  -= 1  * Time.fixedDeltaTime;
+        }
+       
     }
 
   
