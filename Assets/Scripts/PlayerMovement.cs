@@ -21,6 +21,7 @@ public class PlayerMovement : MonoBehaviour
     int starsCollected;
 
     bool isDead = false;
+    bool IsEntering = true;
 
     bool doubleJump = false;
     bool hadDoubleJumped = false;
@@ -32,11 +33,16 @@ public class PlayerMovement : MonoBehaviour
 	public class FloatEvent : UnityEvent<float> { }
   
 	public FloatEvent OnShootEvent;
+
+    public UnityEvent OnFinishEntering;
     // Update is called once per frame
     void Awake(){
         
         if (OnShootEvent == null)
 			OnShootEvent = new FloatEvent();
+
+        if (OnFinishEntering == null)
+			OnFinishEntering = new UnityEvent();    
     }
     float DashCountDown =0f;
     float DashCountDownRemember = 0.2f;
@@ -45,7 +51,10 @@ public class PlayerMovement : MonoBehaviour
     bool dash = false;
     void Update()
     {
-        if(!isDead){
+        if(IsEntering){
+            StartCoroutine(FinishEntering());
+        }
+        if(!isDead && !IsEntering){
             horizontalMove =Input.GetAxisRaw("Horizontal") * runSpeed;
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
@@ -127,6 +136,14 @@ public class PlayerMovement : MonoBehaviour
          starsCollected += 1;
     }
 
+   
+
+    IEnumerator FinishEntering(){
+         yield return new WaitForSeconds(2f);
+         // trigger the stop animation events here
+          IsEntering = false;
+          OnFinishEntering.Invoke();
+     }
     public void OnTakeDamage(){
         animator.SetBool("IsTakingDamage", true);
         if(gameObject.GetComponent<HealthController>().health==0){

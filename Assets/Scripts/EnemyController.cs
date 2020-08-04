@@ -33,6 +33,9 @@ public class EnemyController : MonoBehaviour
 
     public int EnemyLife = 1;
 
+    public ParticleSystem EnemyExplosionParticles;
+    public AudioSource EnemyDestructionSound;
+
     [System.Serializable]
 	public class FloatEvent : UnityEvent<float> { }
     [Header("Events")]
@@ -222,7 +225,9 @@ public class EnemyController : MonoBehaviour
              
            if(EnemyLife<=0){
              
-               gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                gameObject.GetComponent<BoxCollider2D>().enabled = false;
+                EnemyExplosionParticles.Play();
+                EnemyDestructionSound.Play();
                 Destroy(gameObject, 0.3f);
            }
            StartCoroutine(ReturnToDefaultAnimationAfterHited());

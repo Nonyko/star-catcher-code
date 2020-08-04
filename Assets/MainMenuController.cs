@@ -22,15 +22,19 @@ public class MainMenuController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        verticalMove =Input.GetAxisRaw("Vertical");
-        Debug.Log(verticalMove);//1 up, -1 down
+        if(Input.GetButtonDown("Vertical")){
+             verticalMove =Input.GetAxisRaw("Vertical");
+        }else{
+            verticalMove = 0;
+        }       
+        //Debug.Log(verticalMove);//1 up, -1 down
         if(verticalMove!=0){
             ChangeSelectedSound.Play();
             if(verticalMove==1 && OptionSelectedIndex!=0){
                 OptionSelectedIndex = OptionSelectedIndex - 1;
                  ShowOptionSelected();
             }
-            if(verticalMove==-1 && OptionSelectedIndex<menuOptions.Count){
+            if(verticalMove==-1 && OptionSelectedIndex<menuOptions.Count - 1){
                 OptionSelectedIndex = OptionSelectedIndex + 1;
                  ShowOptionSelected();
             }
@@ -38,6 +42,7 @@ public class MainMenuController : MonoBehaviour
     }
 
     void ShowOptionSelected(){
+        Debug.Log(OptionSelectedIndex);
         menuOptions[OptionSelectedIndex].transform.GetChild(0).gameObject.SetActive(true);
         for(int i = 0; i<menuOptions.Count; i++){
          if(i!=OptionSelectedIndex){

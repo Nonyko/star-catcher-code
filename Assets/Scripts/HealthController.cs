@@ -24,15 +24,25 @@ public class HealthController : MonoBehaviour
 
     
 	public FloatEvent OnDamageEvent;
+
+    GameObject PanelGameOver;
     // Start is called before the first frame update
+     void Awake() {
+        PanelGameOver = GameObject.Find("Canvas").transform.GetChild(1).gameObject;
+        Debug.Log(PanelGameOver);
+    }
     void Start()
     {
-        
+       
     }
 
     // Update is called once per frame
     void Update()
     {
+        if(health<=0){
+            PanelGameOver.SetActive(true);
+        }
+
          StartCoroutine(TakeDamage());
 
         for(int i = 0; i<hearts.Length; i++){

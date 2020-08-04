@@ -26,6 +26,7 @@ public class CharacterController2D : MonoBehaviour
 
 	public AudioSource JumpSound;
 	public AudioSource LandingSound;
+	public AudioSource DashSound;
 
 	float groundedRememberTime = 0.2f;
     float groundedTimeBeforeReset  = 0;
@@ -95,7 +96,7 @@ public class CharacterController2D : MonoBehaviour
 			{
 				trail.SetActive(true);
 			}
-			Debug.Log("was dashing");
+			// Debug.Log("was dashing");
 			wasDashing=false;
 			StartCoroutine(StopDash());
 		}
@@ -203,7 +204,8 @@ public class CharacterController2D : MonoBehaviour
 			}
 		if (m_Grounded && dash){
 			wasDashing = true;
-			  Debug.Log("executar dash");
+			//   Debug.Log("executar dash");
+			  DashSound.Play();
 			  // Move the character by finding the target velocity
 			Vector3 targetVelocity = new Vector2(move * 20f, m_Rigidbody2D.velocity.y);
 			m_Rigidbody2D.velocity = targetVelocity;			

@@ -9,6 +9,8 @@ public class LevelInformation : MonoBehaviour
     public float timeLevel = 0f;
 
     public int lastPhase = 0;
+
+    
     // Start is called before the first frame update
     void Start()
     {
@@ -22,6 +24,7 @@ public class LevelInformation : MonoBehaviour
         PlayerPrefs.SetInt("numberStarsColected", numberStarsColected);
         PlayerPrefs.SetFloat("timeLevel", timeLevel);
         PlayerPrefs.SetInt("lastPhase", lastPhase);
+        SaveSystem.SaveLevel(this);
     }
     // Update is called once per frame
     void Update()

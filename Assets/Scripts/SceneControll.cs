@@ -15,8 +15,10 @@ public class SceneControll : MonoBehaviour
     new Dictionary<int, string>();
      void Start()
     {
-        levelsScenesName[0]="Tutorial_scene";
-        levelsScenesName[1]="SampleScene";
+        SceneNames sceneNames = new SceneNames();
+        levelsScenesName = sceneNames.levelsScenesName;
+        // levelsScenesName[0]="Tutorial_scene";
+        // levelsScenesName[1]="SampleScene";
 
         Player = GameObject.Find("Player");
         GameObject canvas = GameObject.Find("Canvas");
@@ -40,23 +42,15 @@ public class SceneControll : MonoBehaviour
                     nextLevel();
                 }
                  if(sceneActive.name.Equals("MainMenuScreen")){
-                      GameObject MenuOptions = GameObject.Find("MenuOptions");
-                      if(MenuOptions!=null){
-                          //Pegando valor do index selecionado
-                         int OptionSelectedIndex = MenuOptions.GetComponent<MainMenuController>().OptionSelectedIndex;
-
-                            //Indo para outra tela pelo valor selecionado
-                         if(OptionSelectedIndex==0 && Input.GetButtonDown("Submit")){
-                              StartCoroutine(ChangeScene(levelsScenesName[0]));
-                         }
-
-                      }
-                    //mandar para proxima fase
-                    //nextLevel();
+                     MainMenu();                  
+                }
+                 if(sceneActive.name.Equals("LevelSelectionScreen")){
+                    LevelSelectionMenu();                  
                 }
             }
         }
 
+    //PAUSE SYSTEM    
         if(Player!=null){             
             if(Player.GetComponent<HealthController>().health<=0){              
                 OnPlayerDead();
@@ -81,18 +75,72 @@ public class SceneControll : MonoBehaviour
          }
         
     }
+
+    //MAIN MENU ACTIONS
+    void MainMenu(){
+        GameObject MenuOptions = GameObject.Find("MenuOptions");
+        if(MenuOptions!=null){
+            //Pegando valor do index selecionado
+            int OptionSelectedIndex = MenuOptions.GetComponent<MainMenuController>().OptionSelectedIndex;
+
+            //Indo para outra tela pelo valor selecionado
+            //a option 0 eh: create new game
+            if(OptionSelectedIndex==0 && Input.GetButtonDown("Submit")){
+                SaveSystem.CreateSave();
+                StartCoroutine(ChangeScene(levelsScenesName[0]));
+            }
+        //op 1: load game    
+            if(OptionSelectedIndex==1 && Input.GetButtonDown("Submit")){
+                SaveSystem.LoadSave();
+                StartCoroutine(ChangeScene("LevelSelectionScreen"));
+            }
+
+        }
+    }
+    //LEVEL SELECTION MENU
+    void LevelSelectionMenu(){
+        
+        if(Input.GetButtonDown("Submit")){
+
+            GameObject LevelSelection = GameObject.Find("LevelSelection");
+            int OptionSelectedIndex = LevelSelection.GetComponent<LevelSelectionController>().OptionSelectedIndex;
+            SaveData saveData = LevelSelection.GetComponent<LevelSelectionController>().saveData;
+            foreach(LevelData levelData in saveData.completedLevels){
+                Debug.Log(levelData.levelIndex);
+            }
+            int lastLevelSavedIndex = saveData.completedLevels[saveData.completedLevels.Count-1].levelIndex; 
+
+                //SaveSystem.CreateSave();
+                if(saveData.completedLevels.Find(x=> x.levelIndex == OptionSelectedIndex) != null 
+                || OptionSelectedIndex == 0
+                || OptionSelectedIndex == lastLevelSavedIndex + 1){
+                    Debug.Log("Unlocked");                     
+                   StartCoroutine(ChangeScene(levelsScenesName[OptionSelectedIndex]));
+                }else{                     
+                    Debug.Log("Locked");
+                }
+        }
+    }
     public void OnLevelCompleted(){
         StartCoroutine(ChangeScene("phase_complete"));
     }
 
     void OnPlayerDead(){        
-         StartCoroutine(ChangeScene(sceneActive.name));
+         StartCoroutine(ChangeScene(sceneActive.name,1f));
     }
 
     IEnumerator ChangeScene(string scene) 
 {   
         //SceneManager.UnloadSceneAsync(sceneActive.name);
         yield return new WaitForSeconds(0.3f);
+        SceneManager.LoadScene(scene, LoadSceneMode.Single);
+        
+}
+
+    IEnumerator ChangeScene(string scene, float timetowait) 
+{   
+        //SceneManager.UnloadSceneAsync(sceneActive.name);
+        yield return new WaitForSeconds(timetowait);
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
         
 }
