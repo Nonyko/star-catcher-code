@@ -36,6 +36,8 @@ public class EnemyController : MonoBehaviour
     public ParticleSystem EnemyExplosionParticles;
     public AudioSource EnemyDestructionSound;
 
+    public GameObject explosionPrefab;
+
     [System.Serializable]
 	public class FloatEvent : UnityEvent<float> { }
     [Header("Events")]
@@ -214,7 +216,7 @@ public class EnemyController : MonoBehaviour
         if(col.CompareTag("Bullet")){       
           
            animator.SetBool("IsTakingDamage",true);
-           OnHitedEvent.Invoke(6.0f);
+           OnHitedEvent.Invoke(10f);
 
            if(!Invunerable){
                 EnemyLife = EnemyLife - 1;
@@ -228,6 +230,7 @@ public class EnemyController : MonoBehaviour
                 gameObject.GetComponent<BoxCollider2D>().enabled = false;
                 EnemyExplosionParticles.Play();
                 EnemyDestructionSound.Play();
+                Instantiate(explosionPrefab, gameObject.transform.position, gameObject.transform.rotation);
                 Destroy(gameObject, 0.3f);
            }
            StartCoroutine(ReturnToDefaultAnimationAfterHited());

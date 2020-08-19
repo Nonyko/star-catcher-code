@@ -22,7 +22,7 @@ public class BulletController : MonoBehaviour
         Destroy(gameObject, 0.5f);
     }
 
-     void  OnTriggerEnter2D(Collider2D col){
+     void  OnTriggerEnter2D(Collider2D col){        
          if(col.CompareTag("Enemy") || col.CompareTag("Floor") || col.CompareTag("FallingBlock")){
             //health--;
            shotVisuals();

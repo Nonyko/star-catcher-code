@@ -11,10 +11,12 @@ public class SceneControll : MonoBehaviour
     GameObject GamePausedScreen;
 
     bool IsPaused = false;
+     public GameObject CanvasTransition;
     Dictionary<int, string> levelsScenesName =
     new Dictionary<int, string>();
      void Start()
     {
+      
         SceneNames sceneNames = new SceneNames();
         levelsScenesName = sceneNames.levelsScenesName;
         // levelsScenesName[0]="Tutorial_scene";
@@ -27,6 +29,12 @@ public class SceneControll : MonoBehaviour
         }
        
         sceneActive = SceneManager.GetActiveScene();
+
+
+        if(!sceneActive.name.Equals("titlescreen")){
+            StartCoroutine(TransitionAnimationIn());
+        }
+
     }
 
     void Update(){
@@ -62,6 +70,8 @@ public class SceneControll : MonoBehaviour
         }
 
     }
+
+     
 
     void nextLevel(){
          int lastPhase = PlayerPrefs.GetInt("lastPhase", 0);  
@@ -132,18 +142,35 @@ public class SceneControll : MonoBehaviour
     IEnumerator ChangeScene(string scene) 
 {   
         //SceneManager.UnloadSceneAsync(sceneActive.name);
+         StartCoroutine(TransitionAnimationOut());
         yield return new WaitForSeconds(0.3f);
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
+       
         
 }
 
     IEnumerator ChangeScene(string scene, float timetowait) 
-{   
+{       TransitionAnimationOut();
         //SceneManager.UnloadSceneAsync(sceneActive.name);
+       
         yield return new WaitForSeconds(timetowait);
         SceneManager.LoadScene(scene, LoadSceneMode.Single);
+      
         
 }
+
+ IEnumerator TransitionAnimationOut(){
+        CanvasTransition.SetActive(true);
+        CanvasTransition.GetComponent<ScreenTransitionController>().AnimationOut();
+        yield return null;
+ }
+
+  IEnumerator TransitionAnimationIn(){
+        CanvasTransition.SetActive(true);
+        CanvasTransition.GetComponent<ScreenTransitionController>().AnimationIn();
+        yield return null;
+ }
+
 void TogglePause(){
     if(IsPaused){
         ResumeGame();

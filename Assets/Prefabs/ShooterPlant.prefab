@@ -194,6 +194,11 @@ MonoBehaviour:
   dontPassInvisibleWallBehavior: 1
   movementBehaviorString: fixed
   animator: {fileID: 6509030580429498512}
+  EnemyLife: 1
+  EnemyExplosionParticles: {fileID: 0}
+  EnemyDestructionSound: {fileID: 0}
+  explosionPrefab: {fileID: 3160932573610936351, guid: 693c5ce32d6677c4a895aeaa20f196aa,
+    type: 3}
   OnHitedEvent:
     m_PersistentCalls:
       m_Calls:
@@ -248,6 +253,7 @@ MonoBehaviour:
   OnPlantShootEvent:
     m_PersistentCalls:
       m_Calls: []
+  ShootSequence: 01000000
 --- !u!1 &6509030580589787375
 GameObject:
   m_ObjectHideFlags: 0

@@ -20,8 +20,8 @@ public class PlayerMovement : MonoBehaviour
     float jumpPressedTimeBeforeReset  = 0;
     int starsCollected;
 
-    bool isDead = false;
-    bool IsEntering = true;
+    public bool isDead = false;
+    public bool IsEntering = true;
 
     bool doubleJump = false;
     bool hadDoubleJumped = false;
@@ -49,6 +49,32 @@ public class PlayerMovement : MonoBehaviour
     bool IsDashing = false;
     float oldDirection = 0;
     bool dash = false;
+
+    //checa se horizontal axis raw mudou para zero
+    float OldHorizontalMove = 0;
+    bool ChangedToZero = false;
+
+    bool ChangedToOne = false;
+
+    bool HorizontalMovementChangedToOne(float horizontalMove){
+        float NewHorizontalMove = horizontalMove;
+        bool changedToOne = false;
+        if(OldHorizontalMove!=1 && OldHorizontalMove!=-1){
+            if(NewHorizontalMove==1 || NewHorizontalMove==-1){
+               //mudou para 0
+               Debug.Log("MUDOU PRA 1 OU -1");
+                OldHorizontalMove = NewHorizontalMove;
+                changedToOne =  true;
+                // StartCoroutine(ChangedToOneCoroutine());
+                ChangedToOne = true;
+                 Debug.Log(changedToOne);
+            }
+        }
+        OldHorizontalMove = NewHorizontalMove;
+        return changedToOne;
+    }
+ 
+  
     void Update()
     {
         if(IsEntering){
@@ -56,12 +82,15 @@ public class PlayerMovement : MonoBehaviour
         }
         if(!isDead && !IsEntering){
             horizontalMove =Input.GetAxisRaw("Horizontal") * runSpeed;
+        
+           
+            HorizontalMovementChangedToOne(Input.GetAxisRaw("Horizontal"));
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
 
             //dash: se button horizontal true: iniciar countdown, se antes de chegar a zero for true novamente,
             //e os dois comandos rapidos forem na mesma direcao executar dash 
-            
-            if(Input.GetButtonDown("Horizontal")){
+            //Debug.Log("retornou "+);
+            if(Input.GetButtonDown("Horizontal") || ChangedToOne){
               
                 //quando eu aperto horizontal,
                 // se eu ja nao estiver dando dash,
@@ -81,7 +110,7 @@ public class PlayerMovement : MonoBehaviour
                    oldDirection = Input.GetAxisRaw("Horizontal");
                 }
                
-               
+               ChangedToOne = false;
             }
 
             
@@ -128,7 +157,7 @@ public class PlayerMovement : MonoBehaviour
     }
     public void OnShoot(){
         timeBeforeResetShoot=0f;
-        OnShootEvent.Invoke(5f);
+        OnShootEvent.Invoke(10f);
         animator.SetBool("IsShooting", true); 
         
     }
