@@ -67,6 +67,9 @@ public class SceneControll : MonoBehaviour
                 //evento game paused
                 TogglePause();
             }
+            if(IsPaused){
+                PauseMenu();
+            }
         }
 
     }
@@ -84,6 +87,20 @@ public class SceneControll : MonoBehaviour
 
          }
         
+    }
+
+    void PauseMenu(){
+        if(Input.GetButtonDown("Submit")){
+            GameObject MenuOptions = GameObject.Find("MenuOptions");
+            int OptionSelectedIndex = MenuOptions.GetComponent<PauseMenuController>().OptionSelectedIndex;
+            if(OptionSelectedIndex==0){
+                TogglePause();
+            }
+            if(OptionSelectedIndex==1){
+                StartCoroutine(ChangeScene(sceneActive.name));
+                TogglePause();
+            }
+        }
     }
 
     //MAIN MENU ACTIONS

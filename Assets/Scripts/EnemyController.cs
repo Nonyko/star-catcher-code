@@ -125,7 +125,9 @@ public class EnemyController : MonoBehaviour
        if(m_Grounded && jump){        
          m_Grounded = false;
         // little jump
-        m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce));
+        m_Rigidbody2D.velocity = new Vector2(m_Rigidbody2D.velocity.x, 0.0f);
+		m_Rigidbody2D.AddForce(new Vector2(0f, m_JumpForce), ForceMode2D.Impulse);
+      
        }
        
 

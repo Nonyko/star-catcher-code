@@ -4952,7 +4952,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_MovementSmoothing: 0.05
-  m_JumpForce: 300
+  m_JumpForce: 8
   m_WhatIsGround:
     serializedVersion: 2
     m_Bits: 1536

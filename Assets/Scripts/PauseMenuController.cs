@@ -1,8 +1,8 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class MainMenuController : MonoBehaviour
+public class PauseMenuController : MonoBehaviour
 {   
    
     List<GameObject> menuOptions = new List<GameObject>();
@@ -17,6 +17,8 @@ public class MainMenuController : MonoBehaviour
         
         menuOptions.Add(GameObject.Find("Option1"));
         menuOptions.Add(GameObject.Find("Option2"));
+        menuOptions.Add(GameObject.Find("Option3"));
+        menuOptions.Add(GameObject.Find("Option4"));
     }
 
 float OldVerticalMove = 0;
@@ -64,7 +66,7 @@ bool ChangedToOne = false;
     }
 
     void ShowOptionSelected(){
-        Debug.Log(OptionSelectedIndex);
+        //Debug.Log(OptionSelectedIndex);
         menuOptions[OptionSelectedIndex].transform.GetChild(0).gameObject.SetActive(true);
         for(int i = 0; i<menuOptions.Count; i++){
          if(i!=OptionSelectedIndex){

@@ -62,12 +62,12 @@ public class PlayerMovement : MonoBehaviour
         if(OldHorizontalMove!=1 && OldHorizontalMove!=-1){
             if(NewHorizontalMove==1 || NewHorizontalMove==-1){
                //mudou para 0
-               Debug.Log("MUDOU PRA 1 OU -1");
+            //    Debug.Log("MUDOU PRA 1 OU -1");
                 OldHorizontalMove = NewHorizontalMove;
                 changedToOne =  true;
                 // StartCoroutine(ChangedToOneCoroutine());
                 ChangedToOne = true;
-                 Debug.Log(changedToOne);
+                //  Debug.Log(changedToOne);
             }
         }
         OldHorizontalMove = NewHorizontalMove;
@@ -86,7 +86,7 @@ public class PlayerMovement : MonoBehaviour
            
             HorizontalMovementChangedToOne(Input.GetAxisRaw("Horizontal"));
             animator.SetFloat("Speed", Mathf.Abs(horizontalMove));
-
+            
             //dash: se button horizontal true: iniciar countdown, se antes de chegar a zero for true novamente,
             //e os dois comandos rapidos forem na mesma direcao executar dash 
             //Debug.Log("retornou "+);
@@ -134,9 +134,9 @@ public class PlayerMovement : MonoBehaviour
             animator.SetBool("IsJumping", true);
         }
         
-        if (Input.GetButtonDown("Crouch")){
+        if (Input.GetButtonDown("Crouch") || Input.GetAxisRaw("Vertical")==-1){
             crouch = true;           
-        } else if(Input.GetButtonUp("Crouch")){
+        } else if(Input.GetButtonUp("Crouch")  || Input.GetAxisRaw("Vertical")!=-1){
             crouch = false;           
         }
         }

@@ -40,6 +40,26 @@ public class LevelSelectionController : MonoBehaviour
         UpdateLevelInfo();
     }
 
+     float OldHorizontalMove = 0;
+    bool ChangedToOne = false;
+
+    bool HorizontalMovementChangedToOne(float horizontalMove){
+        float NewHorizontalMove = horizontalMove;
+        bool changedToOne = false;
+        if(OldHorizontalMove!=1 && OldHorizontalMove!=-1){
+            if(NewHorizontalMove==1 || NewHorizontalMove==-1){
+               //mudou para 0
+            //    Debug.Log("MUDOU PRA 1 OU -1");
+                OldHorizontalMove = NewHorizontalMove;
+                changedToOne =  true;
+                // StartCoroutine(ChangedToOneCoroutine());
+                ChangedToOne = true;
+                //  Debug.Log(changedToOne);
+            }
+        }
+        OldHorizontalMove = NewHorizontalMove;
+        return changedToOne;
+    }
     // Update is called once per frame
     void Update()
     {
@@ -63,8 +83,10 @@ public class LevelSelectionController : MonoBehaviour
     }
 
     void listenHorizontalMove(){
-        if(Input.GetButtonDown("Horizontal")){
+        HorizontalMovementChangedToOne(Input.GetAxisRaw("Horizontal"));
+        if(Input.GetButtonDown("Horizontal") || ChangedToOne){
             horizontalMove =Input.GetAxisRaw("Horizontal");
+            ChangedToOne = false;
         }else{
            horizontalMove = 0;
         } 
